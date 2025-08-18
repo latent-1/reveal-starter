@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Slides</title>
+    
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section class="flex flex-col items-center justify-center h-full">
+                <h1 class="text-6xl font-bold mb-4">Welcome to Your Presentation</h1>
+                <p class="text-2xl text-muted-foreground">Built with RevealJS, Tailwind CSS, and shadcn themes</p>
+            </section>
+            
+            <section>
+                <h2 class="text-4xl font-semibold mb-6">Introduction</h2>
+                <div class="space-y-4">
+                    <p class="text-xl">This is a basic setup that includes:</p>
+                    <ul class="list-disc list-inside space-y-2 text-lg ml-6">
+                        <li>RevealJS for presentation framework</li>
+                        <li>Tailwind CSS for utility-first styling</li>
+                        <li>shadcn color system and theme variables</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section>
+                <h2 class="text-4xl font-semibold mb-6">Using Tailwind Classes</h2>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-card p-6 rounded-lg border border-border">
+                        <h3 class="text-2xl font-medium mb-3">Card Example</h3>
+                        <p class="text-muted-foreground">This uses shadcn theme colors with Tailwind utilities</p>
+                    </div>
+                    <div class="bg-primary text-primary-foreground p-6 rounded-lg">
+                        <h3 class="text-2xl font-medium mb-3">Primary Card</h3>
+                        <p>Using primary color from the theme</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="flex flex-col items-center justify-center h-full">
+                <h2 class="text-5xl font-bold mb-6">Thank You!</h2>
+                <p class="text-xl text-muted-foreground">Start customizing your slides</p>
+                <div class="mt-8 flex gap-4">
+                    <button class="px-6 py-3 bg-primary text-primary-foreground rounded-md hover:opacity-90 transition-opacity">
+                        Get Started
+                    </button>
+                    <button class="px-6 py-3 bg-secondary text-secondary-foreground rounded-md hover:opacity-90 transition-opacity">
+                        Learn More
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <script src="node_modules/reveal.js/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>
