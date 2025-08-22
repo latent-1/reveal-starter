@@ -1,73 +1,383 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <title>Slides</title>
-    
-    <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
-    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
-    <link rel="stylesheet" href="dist/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Introduction to Formula 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slide {
+            display: none;
+        }
+        .slide.active {
+            display: block;
+        }
+        .f1-gradient {
+            background: linear-gradient(135deg, #dc2626 0%, #1f2937 50%, #000000 100%);
+        }
+        .f1-red {
+            background-color: #dc2626;
+        }
+    </style>
 </head>
-<body>
-    <div class="reveal">
-        <div class="slides">
-            <section class="flex flex-col items-center justify-center h-full">
-                <h1 class="text-6xl font-bold mb-4">Welcome to Your Presentation</h1>
-                <p class="text-2xl text-muted-foreground">Built with RevealJS, Tailwind CSS, and shadcn themes</p>
-            </section>
-            
-            <section>
-                <h2 class="text-4xl font-semibold mb-6">Introduction</h2>
-                <div class="space-y-4">
-                    <p class="text-xl">This is a basic setup that includes:</p>
-                    <ul class="list-disc list-inside space-y-2 text-lg ml-6">
-                        <li>RevealJS for presentation framework</li>
-                        <li>Tailwind CSS for utility-first styling</li>
-                        <li>shadcn color system and theme variables</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section>
-                <h2 class="text-4xl font-semibold mb-6">Using Tailwind Classes</h2>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-card p-6 rounded-lg border border-border">
-                        <h3 class="text-2xl font-medium mb-3">Card Example</h3>
-                        <p class="text-muted-foreground">This uses shadcn theme colors with Tailwind utilities</p>
-                    </div>
-                    <div class="bg-primary text-primary-foreground p-6 rounded-lg">
-                        <h3 class="text-2xl font-medium mb-3">Primary Card</h3>
-                        <p>Using primary color from the theme</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="flex flex-col items-center justify-center h-full">
-                <h2 class="text-5xl font-bold mb-6">Thank You!</h2>
-                <p class="text-xl text-muted-foreground">Start customizing your slides</p>
-                <div class="mt-8 flex gap-4">
-                    <button class="px-6 py-3 bg-primary text-primary-foreground rounded-md hover:opacity-90 transition-opacity">
-                        Get Started
-                    </button>
-                    <button class="px-6 py-3 bg-secondary text-secondary-foreground rounded-md hover:opacity-90 transition-opacity">
-                        Learn More
-                    </button>
-                </div>
-            </section>
+<body class="bg-gray-900 text-white font-sans overflow-hidden">
+    <!-- Navigation -->
+    <div class="fixed top-4 left-4 z-50 flex space-x-2">
+        <button onclick="previousSlide()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors">
+            ← Previous
+        </button>
+        <button onclick="nextSlide()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors">
+            Next →
+        </button>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="fixed top-4 right-4 z-50 bg-black bg-opacity-50 px-4 py-2 rounded-lg">
+        <span id="slideCounter">1 / 11</span>
+    </div>
+
+    <!-- Title Slide -->
+    <div class="slide active min-h-screen flex items-center justify-center f1-gradient">
+        <div class="text-center">
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 animate-pulse">
+                FORMULA <span class="text-red-400">1</span>
+            </h1>
+            <p class="text-2xl md:text-3xl mb-8">An Introduction to the Pinnacle of Motorsport</p>
+            <div class="w-32 h-1 bg-red-500 mx-auto"></div>
         </div>
     </div>
-    
-    <script src="node_modules/reveal.js/dist/reveal.js"></script>
+
+    <!-- Slide 1: The Pinnacle of Motorsport -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <h2 class="text-5xl font-bold mb-12 text-red-400">The Pinnacle of Motorsport</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-red-300">🏎️ Cutting-Edge Technology</h3>
+                    <p class="text-gray-300">State-of-the-art engineering and innovation pushed to the absolute limits</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-red-300">👨‍💼 Elite Drivers</h3>
+                    <p class="text-gray-300">The world's most skilled racing drivers competing at the highest level</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-red-300">🌍 Global Appeal</h3>
+                    <p class="text-gray-300">Millions of fans worldwide following high-stakes competition</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Anatomy of an F1 Car -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-gray-900">
+        <div class="max-w-5xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-12 text-center text-red-400">The Anatomy of an F1 Car</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-xl font-semibold text-red-300 mb-2">🏗️ Chassis</h3>
+                        <p class="text-gray-300">Carbon fiber monocoque providing strength and safety</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-xl font-semibold text-red-300 mb-2">🌪️ Aerodynamics</h3>
+                        <p class="text-gray-300">Front/rear wings and bargeboards for downforce and air management</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-xl font-semibold text-red-300 mb-2">⚡ Power Unit</h3>
+                        <p class="text-gray-300">1.6L V6 turbo hybrid engine producing 1000+ horsepower</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-xl font-semibold text-red-300 mb-2">🏁 Tires</h3>
+                        <p class="text-gray-300">Specially designed compounds for different track conditions</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gray-800 p-8 rounded-lg">
+                        <div class="text-6xl mb-4">🏎️</div>
+                        <p class="text-gray-400">F1 Car Schematic</p>
+                        <p class="text-sm text-gray-500 mt-2">Combining cutting-edge technology with aerodynamic perfection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: The Rules of the Race -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-green-900 to-gray-900">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <h2 class="text-5xl font-bold mb-12 text-red-400">The Rules of the Race</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-green-300">🏃‍♂️ Practice Sessions</h3>
+                    <p class="text-gray-300">Three practice sessions to set up the car and learn the track</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-yellow-300">⏱️ Qualifying</h3>
+                    <p class="text-gray-300">Determines starting positions for the race based on lap times</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-red-300">🏁 Main Race</h3>
+                    <p class="text-gray-300">The main event where championship points are awarded</p>
+                </div>
+            </div>
+            <div class="mt-12 bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4 text-red-300">Points System</h3>
+                <p class="text-lg text-gray-300">Top 10 finishers score points: 25, 18, 15, 12, 10, 8, 6, 4, 2, 1</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Qualifying Explained -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 to-gray-900">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-12 text-center text-red-400">Qualifying Explained</h2>
+            <div class="space-y-8">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-red-500">
+                        <h3 class="text-xl font-semibold mb-3 text-red-300">Q1 - First Stage</h3>
+                        <p class="text-gray-300">20 minutes • Bottom 5 eliminated</p>
+                        <p class="text-sm text-gray-400 mt-2">Sets positions 16-20</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-yellow-500">
+                        <h3 class="text-xl font-semibold mb-3 text-yellow-300">Q2 - Second Stage</h3>
+                        <p class="text-gray-300">15 minutes • Next 5 eliminated</p>
+                        <p class="text-sm text-gray-400 mt-2">Sets positions 11-15</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-xl font-semibold mb-3 text-green-300">Q3 - Final Stage</h3>
+                        <p class="text-gray-300">12 minutes • Top 10 battle</p>
+                        <p class="text-sm text-gray-400 mt-2">Sets positions 1-10</p>
+                    </div>
+                </div>
+                <div class="text-center bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-red-300">🥇 Pole Position</h3>
+                    <p class="text-lg text-gray-300">The fastest qualifier starts from the front of the grid</p>
+                    <p class="text-sm text-gray-400 mt-2">A good qualifying position is crucial for race success</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Flag System -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-900 to-gray-900">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-12 text-center text-red-400">Flag System</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-green-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">🟢 Green Flag</h3>
+                    <p class="text-green-100">Race start or restart after caution period</p>
+                </div>
+                <div class="bg-yellow-600 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">🟡 Yellow Flag</h3>
+                    <p class="text-yellow-100">Caution - slow down, no overtaking</p>
+                </div>
+                <div class="bg-red-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">🔴 Red Flag</h3>
+                    <p class="text-red-100">Race stopped - return to pit lane</p>
+                </div>
+                <div class="bg-blue-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-white">🔵 Blue Flag</h3>
+                    <p class="text-blue-100">Lapped car must let faster car pass</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold mb-3 text-white">🏁 Checkered Flag</h3>
+                <p class="text-xl text-gray-300">End of race - Victory!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Tire Strategy -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-900 to-gray-900">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-12 text-center text-red-400">Tire Strategy</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="bg-red-800 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-red-100">🔴 Soft Tires</h3>
+                    <p class="text-red-200">Fastest lap times</p>
+                    <p class="text-red-300 text-sm">Wear out quickly</p>
+                </div>
+                <div class="bg-yellow-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-yellow-100">🟡 Medium Tires</h3>
+                    <p class="text-yellow-200">Balanced performance</p>
+                    <p class="text-yellow-300 text-sm">Moderate wear rate</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-100">⚪ Hard Tires</h3>
+                    <p class="text-gray-200">Long-lasting</p>
+                    <p class="text-gray-300 text-sm">Slower lap times</p>
+                </div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg text-center">
+                <h3 class="text-xl font-semibold mb-4 text-red-300">⛽ Pit Stop Strategy</h3>
+                <p class="text-gray-300 mb-2">Mandatory tire changes during the race</p>
+                <p class="text-sm text-gray-400">Teams must use at least two different tire compounds</p>
+                <p class="text-sm text-gray-400">Tire degradation affects speed and handling</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Penalties and Regulations -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-red-900 to-gray-900">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-12 text-center text-red-400">Penalties and Regulations</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-red-300">⏰ Time Penalties</h3>
+                        <p class="text-gray-300">5 or 10-second penalties added to race time</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-orange-300">🔄 Drive-Through</h3>
+                        <p class="text-gray-300">Must drive through pit lane at speed limit</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-yellow-300">📍 Grid Penalties</h3>
+                        <p class="text-gray-300">Starting position moved back on the grid</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-300">⚖️ FIA Enforcement</h3>
+                        <p class="text-gray-300">International body governing F1 regulations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center bg-gray-800 p-6 rounded-lg">
+                <p class="text-lg text-gray-300">Common infractions include unsafe releases, track limits, and dangerous driving</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: The Teams and Drivers -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 to-gray-900">
+        <div class="max-w-5xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-12 text-center text-red-400">The Teams and Drivers</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="bg-red-700 p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-semibold mb-4 text-red-100">🏎️ Ferrari</h3>
+                    <p class="text-red-200">The Prancing Horse</p>
+                    <p class="text-red-300 text-sm">Most iconic F1 team</p>
+                </div>
+                <div class="bg-gray-600 p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-100">🏎️ Mercedes</h3>
+                    <p class="text-gray-200">Silver Arrows</p>
+                    <p class="text-gray-300 text-sm">Recent dominant force</p>
+                </div>
+                <div class="bg-blue-700 p-6 rounded-lg text-center">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-100">🏎️ Red Bull Racing</h3>
+                    <p class="text-blue-200">Energy and Speed</p>
+                    <p class="text-blue-300 text-sm">Current championship leaders</p>
+                </div>
+            </div>
+            <div class="text-center bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4 text-red-300">🏆 Legendary Drivers</h3>
+                <p class="text-gray-300">Ayrton Senna • Michael Schumacher • Lewis Hamilton • Max Verstappen</p>
+                <p class="text-sm text-gray-400 mt-2">The human element that brings drama and excitement to the sport</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: The Thrill of the Race -->
+    <div class="slide min-h-screen flex items-center justify-center f1-gradient">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <h2 class="text-5xl font-bold mb-12 text-red-400">The Thrill of the Race</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-3 text-red-300">🏃‍♂️ Overtakes</h3>
+                        <p class="text-gray-200">Wheel-to-wheel battles at 300+ km/h</p>
+                    </div>
+                    <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-3 text-orange-300">⚡ Pit Stops</h3>
+                        <p class="text-gray-200">2.5-second tire changes that can decide races</p>
+                    </div>
+                    <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-3 text-yellow-300">🏆 Championship Battle</h3>
+                        <p class="text-gray-200">Every point matters in the title fight</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="text-8xl mb-6">🏎️💨</div>
+                    <p class="text-xl text-gray-200 italic">"The fastest, most technologically advanced racing on Earth"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: How to Follow F1 -->
+    <div class="slide min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-900 to-gray-900">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-12 text-center text-red-400">How to Follow F1</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-teal-300">🌐 Official Channels</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Formula1.com</li>
+                            <li>• F1 TV streaming service</li>
+                            <li>• Official F1 mobile app</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-300">📱 Social Media</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• @F1 on Twitter/X</li>
+                            <li>• Formula 1 on YouTube</li>
+                            <li>• Instagram highlights</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-red-300">📺 Popular Content</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• "Drive to Survive" on Netflix</li>
+                            <li>• Race weekend broadcasts</li>
+                            <li>• Behind-the-scenes content</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold mb-3 text-yellow-300">🎯 Getting Started</h3>
+                        <p class="text-gray-300">Pick a team to follow and watch the next race!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        Reveal.initialize({
-            hash: true,
-            transition: 'slide',
-            transitionSpeed: 'default',
-            backgroundTransition: 'fade'
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            }
         });
+
+        // Initialize
+        showSlide(0);
     </script>
 </body>
-</html>
